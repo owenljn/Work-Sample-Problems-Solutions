@@ -1,0 +1,15 @@
+Step 1, remove outliers: 
+	1.To visualize the popularity of the POI locations more accurately, ignoring the the extreme outliers is necessary.
+	2.Since the minimal distance data is already calculated previously, they can be easily used to calculate the outliers, I use standard deviation to help find out what the outliers are in the dataframe, then remove them from the dataframe.
+  
+Step 2, map the density of POIs into a scale from -10 to 10:
+	1. After outliers are removed, recalculate the radius and density of each POI 
+	2. Define a density level of -10 as: the POI has no request at all, and define a density level of 10 as: the POI is extremely popular
+	3. Based on the above definition of scale, set a density threshold for each scale point(It takes a large amount of data to get 20 different thresholds), so we can have a standard to measure the popularity of any given POI
+	
+	
+Note that I assumed POI1 and POI2 are identical since their latitudes and longitudes are the same.
+Running instructions for the python files I wrote:
+	I used numpy as well as matplotlib, they need to be installed in order for my python files to run properly, you can install them by typing "pip install numpy" and "pip install matplotlib"
+
+The results for clean, label and analysis steps are stored in the csv files in the folders named after them
